@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import numpy as np
+import pandas as pd
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from util.excelUtil import ExcelUtil
+from util.OsUtil import OsUtil
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    files = OsUtil.walkFile('C://Users//llllll//Desktop//itsm2')
+    list = []
+    for f in files:
+        f = f.replace('\\', '//')
+        excelData = ExcelUtil.open_excel(f, 'Sheet1')
+        excelData.drop(excelData[pd.isna(excelData['处理类型'])].index, inplace=True)
+        list.append(excelData)
+    df = pd.concat(list)
+    df.to_excel('C://Users//llllll//Desktop//itsm2//6.xlsx', index=False, header=True)
