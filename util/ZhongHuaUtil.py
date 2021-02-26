@@ -1,9 +1,10 @@
 import pandas as pd
 
 from util.OsUtil import OsUtil
+from util.excelUtil import ExcelUtil
 
 
-class ExcelUtil(object):
+class ZhongHuaUtil(object):
     """
     中华工单记录合并方法
     """
