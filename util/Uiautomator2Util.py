@@ -55,13 +55,13 @@ class DingTalk(object):
         d.sleep(1)
         d(resourceId="com.alibaba.android.rimet:id/et_phone_input").clear_text()  # 这里是清除指定元素的内容
         d.sleep(1)
-        d(resourceId="com.alibaba.android.rimet:id/et_phone_input").set_text('18822100449')  # 这里是在指定元素中输入dd账号
+        d(resourceId="com.alibaba.android.rimet:id/et_phone_input").set_text('xxxxxxx')  # 这里是在指定元素中输入dd账号
         d.sleep(1)
         logger.info("输入密码")
         d(resourceId="com.alibaba.android.rimet:id/et_pwd_login").click()
         d(resourceId="com.alibaba.android.rimet:id/et_pwd_login").clear_text()  # 这里是清除指定元素的内容
         d.sleep(1)
-        d(resourceId="com.alibaba.android.rimet:id/et_pwd_login").set_text('lcy542466498')  # 这里是在指定元素中输入dd密码#
+        d(resourceId="com.alibaba.android.rimet:id/et_pwd_login").set_text('xxxxxxx')  # 这里是在指定元素中输入dd密码#
         d.click(1384, 1434)
         d.sleep(1)
         logger.info("登录")
@@ -77,7 +77,7 @@ class DingTalk(object):
         # 选择公司
         d(resourceId="com.alibaba.android.rimet:id/menu_current_company").click()
         d.sleep(2)
-        d(text="上海耸智信息科技有限公司").click()
+        d(text="xxxxxxx").click()
         d.sleep(2)
         logger.info("点击考勤打卡")
         d(text="考勤打卡").click()
