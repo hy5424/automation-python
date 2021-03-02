@@ -1,27 +1,18 @@
-import numpy as np
-import pandas as pd
-
-from util.excelUtil import ExcelUtil
-from util.OsUtil import OsUtil
-from util.ZhongHuaUtil import ZhongHuaUtil
-from datetime import datetime
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-
-def tick():
-    print('Tick! The time is: %s' % datetime.now())
+from util.Uiautomator2Util import DingTalk
 
 
-def tick2():
-    print('Tick2! The time is: %s' % datetime.now())
+def punch_in():
+    DingTalk.dingtalk()
+
+
+def punch_out():
+    DingTalk.dingtalk()
 
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(tick, 'cron', hour=16, minute=55)
-    scheduler.add_job(tick2, 'cron', hour=16, minute=57)
-
-    try:
-        scheduler.start()
-    except (KeyboardInterrupt, SystemExit):
-        pass
+    scheduler.add_job(punch_in, 'cron', hour=8, minute=50)
+    scheduler.add_job(punch_out, 'cron', hour=18, minute=10)
+    scheduler.start()
