@@ -1,6 +1,5 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
-
 from util.Uiautomator2Util import DingTalk
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 
 def punch_in():
